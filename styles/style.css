@@ -1,0 +1,16 @@
+body {
+  background-color: #004981;
+}
+
+.div_blue {
+  position: absolute;
+  width: 480px;
+  height: 459px;
+  left: 272px;
+  top: 158px;
+  background-color: #6be6ff;
+  border-radius: 12px;
+}
+.div_blue__div-FlexBox {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div class="container hide"></div>
+    <div class="modal" id="selectLvlModal">
+      <div class="modal__container">
+        <div class="modal__header">
+          <h2 class="title">Выбери сложность</h2>
+        </div>
+        <div class="modal__content">
+          <div class="levels-list">
+            <div class="lvl-item">1</div>
+            <div class="lvl-item">2</div>
+            <div class="lvl-item">3</div>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button class="btn">Старт</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="java/javaLogic.js"></script>
+  </body>
+</html>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "StratosSkyeng";
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .container {
+    width: 975px;
+    margin: 0 auto;
+    /* 0 auto автоматически по бокам */
+    border: 1px solid red;
+  }
+
+  .modal {
+    width: 480px;
+    background: #c2f5ff;
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 158px;
+  }
+
+  .modal__container {
+    padding: 52px 69px 48px 69px;
+  }
+
+  .modal__header {
+    text-align: center;
+  }
+
+  .modal__header .title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #004980;
+  }
+
+  .modal__content .levels-list {
+    padding-top: 48px;
+    padding-bottom: 67px;
+    display: flex;
+    column-gap: 24px;
+  }
+
+  .modal__content .lvl-item {
+    width: 98px;
+    height: 98px;
+    background-color: white;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #0080c1;
+    justify-content: space-evenly;
+
+    cursor: pointer;
+  }
+
+  .modal__footer {
+    margin: 0 auto;
+    display: table;
+  }
+
+  .modal__footer .btn {
+    width: 246px;
+    height: 50px;
+
+    border: none;
+    background: #7ac100;
+    border-radius: 12px;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #ffffff;
+
+    cursor: pointer;
+  }
+</style>

@@ -59,6 +59,11 @@
     cursor: pointer;
   }
 
+  &__content .lvl-item:hover {
+    border-radius: 25px;
+
+  }
+
   &__footer {
     margin: 0 auto;
     display: table;

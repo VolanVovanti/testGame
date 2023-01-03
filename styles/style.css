@@ -58,6 +58,9 @@
   justify-content: space-evenly;
   cursor: pointer;
 }
+.modal__content .lvl-item:hover {
+  border-radius: 25px;
+}
 .modal__footer {
   margin: 0 auto;
   display: table;

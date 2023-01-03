@@ -1,0 +1,23 @@
+{
+    "devDependencies": {
+        "prettier": "^2.8.1"
+    },
+    "name": "les-1",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write ./src/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/VolanVovanti/testGame.git"
+    },
+    "author": "Vova Shik",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/VolanVovanti/testGame/issues"
+    },
+    "homepage": "https://github.com/VolanVovanti/testGame#readme",
+    "description": ""
+}

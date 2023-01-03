@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/style.css" />
-  </head>
-  <body>
-    <div class="container hide"></div>
-    <div class="modal" id="selectLvlModal">
-      <div class="modal__container">
-        <div class="modal__header">
-          <h2 class="title">Выбери сложность</h2>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/styles/style.css" />
+        <style>
+            body {
+                background-color: #004980;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container hide"></div>
+        <div class="modal" id="selectLvlModal">
+            <div class="modal__container">
+                <div class="modal__header">
+                    <h2 class="title">Выбери сложность</h2>
+                </div>
+                <div class="modal__content">
+                    <div class="levels-list">
+                        <div class="lvl-item-1 lvl-item">1</div>
+                        <div class="lvl-item-2 lvl-item">2</div>
+                        <div class="lvl-item-3 lvl-item">3</div>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button class="btn">Старт</button>
+                </div>
+            </div>
         </div>
-        <div class="modal__content">
-          <div class="levels-list">
-            <div class="lvl-item-1 lvl-item">1</div>
-            <div class="lvl-item-2 lvl-item">2</div>
-            <div class="lvl-item-3 lvl-item">3</div>
-          </div>
-        </div>
-        <div class="modal__footer">
-          <button class="btn">Старт</button>
-        </div>
-      </div>
-    </div>
-    <script src="javaScript/javaScriptLogic.js"></script>
-  </body>
+        <script src="javaScript/javaScriptLogic.js"></script>
+    </body>
 </html>
 
 <!-- Добавил новую ветку, как в задании -->

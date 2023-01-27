@@ -2,7 +2,6 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "StratosSkyeng";
 }
 
 .hide {
@@ -16,10 +15,7 @@
   justify-items: center;
   justify-content: space-around;
   gap: 15px;
-  padding-left: 26px;
-  padding-right: 23px;
-  padding-top: 48px;
-  padding-bottom: 49px;
+  padding: 48px 23px 49px 26px;
 }
 .content__page2 {
   display: flex;

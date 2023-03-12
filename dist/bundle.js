@@ -80,9 +80,11 @@ btnStart.addEventListener('click', function () {
   } else if (app.lvl === '2') {
     alert('Переход на страницу Lvl 2');
     divMobal.removeChild(divMobalContainer);
+    containerLvl1();
   } else if (app.lvl === '3') {
     alert('Переход на страницу Lvl 3');
     divMobal.removeChild(divMobalContainer);
+    containerLvl1();
   } else {
     alert('Вы не выбрали уровень сложности');
   }

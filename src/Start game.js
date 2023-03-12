@@ -1,3 +1,5 @@
+import myAllCards from './allCards.js'
+
 const app = {
     lvl: null,
     timer: null,
@@ -133,4 +135,11 @@ function containerLvl1() {
     const divContentImajeLvl1 = document.createElement('div')
     divContentImajeLvl1.className = 'image-out'
     divContentLvl1.appendChild(divContentImajeLvl1)
+
+    // создание и добавление картинок с картами
+
+    const imgFonts = document.createElement('img')
+    imgFonts.src = myAllCards[arrCard[i] - 1];
+    imgFonts.className = 'image-out'
+    divContentImajeLvl1.appendChild(imgFonts);
 }

@@ -10,7 +10,8 @@
         "lint:js": "eslint ./src/**/*.js",
         "lint:css": "stylelint ./src/**.css",
         "lint": "npm run lint:js && npm run lint:css",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "start": "webpack-dev-server ––open"
     },
     "keywords": [],
     "author": "",
@@ -33,7 +34,8 @@
         "stylelint-config-standard": "^29.0.0",
         "stylelint-prettier": "^3.0.0",
         "webpack": "^5.75.0",
-        "webpack-cli": "^5.0.1"
+        "webpack-cli": "^5.0.1",
+        "webpack-dev-server": "^4.11.1"
     },
     "dependencies": {
         "copy-webpack-plugin": "^11.0.0",

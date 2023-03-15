@@ -192,15 +192,25 @@ function containerLvl1() {
             const imgFonts = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
             imgFonts.id = cardsCopy6InLvl1[i].id
+            imgFonts.cardPosition = true
             console.log(imgFonts)
             divContentImajeLvl1.appendChild(imgFonts)
             setTimeout(() => {
-                // Перевернул карты
+                // Перевернул карты рубашкой вверх
                 console.log(imgFonts)
                 imgFonts.src = bacPackCards.img
+                imgFonts.cardPosition = false
             }, 5000)
             imgFonts.addEventListener('click', () => {
-                imgFonts.src = cardsCopy6InLvl1[i].img
+                if (imgFonts.cardPosition === false) {
+                    imgFonts.src = cardsCopy6InLvl1[i].img
+                    imgFonts.cardPosition = true
+                } else if (imgFonts.cardPosition === true) {
+                    imgFonts.cardPosition = false
+                    imgFonts.src = bacPackCards.img
+                } else if (imgFonts.id[i] === imgFonts.id[i]) {
+                    alert('Вы победили')
+                }
             })
         }
     }

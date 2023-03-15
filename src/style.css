@@ -151,4 +151,8 @@ body {
   line-height: 32px;
   color: #ffffff;
   cursor: pointer;
+}
+
+.bacPackCards {
+  background-image: url(../static/pic0.png);
 }/*# sourceMappingURL=style.css.map */

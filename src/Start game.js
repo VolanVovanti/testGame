@@ -200,18 +200,25 @@ function containerLvl1() {
                 console.log(imgFonts)
                 imgFonts.src = bacPackCards.img
                 imgFonts.cardPosition = false
-            }, 5000)
-            imgFonts.addEventListener('click', () => {
-                if (imgFonts.cardPosition === false) {
-                    imgFonts.src = cardsCopy6InLvl1[i].img
-                    imgFonts.cardPosition = true
-                } else if (imgFonts.cardPosition === true) {
-                    imgFonts.cardPosition = false
-                    imgFonts.src = bacPackCards.img
-                } else if (imgFonts.id[i] === imgFonts.id[i]) {
-                    alert('Вы победили')
-                }
-            })
+                // Клик по карте откроется через 5 секунд
+                imgFonts.addEventListener('click', () => {
+                    if (imgFonts.cardPosition === false) {
+                        imgFonts.src = cardsCopy6InLvl1[i].img
+                        imgFonts.cardPosition = true
+
+                        if (imgFonts.id) {
+                            alert('Вы победили')
+                        }
+                        setTimeout(() => {
+                            imgFonts.cardPosition = false
+                            imgFonts.src = bacPackCards.img
+                        }, 2500)
+                    } else if (imgFonts.cardPosition === true) {
+                        imgFonts.cardPosition = false
+                        imgFonts.src = bacPackCards.img
+                    }
+                })
+            }, 3000)
         }
     }
 }
@@ -270,20 +277,38 @@ function containerLvl2() {
         let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
 
         // Режу массив, копирую и отрисовывою
+
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
             const imgFonts = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
+            imgFonts.id = cardsCopy6InLvl1[i].id
+            imgFonts.cardPosition = true
             console.log(imgFonts)
             divContentImajeLvl1.appendChild(imgFonts)
-            // Перевернул карты
             setTimeout(() => {
-                // Перевернул карты
+                // Перевернул карты рубашкой вверх
                 console.log(imgFonts)
                 imgFonts.src = bacPackCards.img
-            }, 5000)
-            imgFonts.addEventListener('click', () => {
-                imgFonts.src = cardsCopy6InLvl1[i].img
-            })
+                imgFonts.cardPosition = false
+                // Клик по карте откроется через 5 секунд
+                imgFonts.addEventListener('click', () => {
+                    if (imgFonts.cardPosition === false) {
+                        imgFonts.src = cardsCopy6InLvl1[i].img
+                        imgFonts.cardPosition = true
+
+                        if (imgFonts.id) {
+                            alert('Вы победили')
+                        }
+                        setTimeout(() => {
+                            imgFonts.cardPosition = false
+                            imgFonts.src = bacPackCards.img
+                        }, 2500)
+                    } else if (imgFonts.cardPosition === true) {
+                        imgFonts.cardPosition = false
+                        imgFonts.src = bacPackCards.img
+                    }
+                })
+            }, 3000)
         }
     }
 }
@@ -341,20 +366,38 @@ function containerLvl3() {
         let sorted = trhiCadsLvl1
         let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
         // Режу массив, копирую и отрисовывою
+
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
             const imgFonts = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
+            imgFonts.id = cardsCopy6InLvl1[i].id
+            imgFonts.cardPosition = true
             console.log(imgFonts)
             divContentImajeLvl1.appendChild(imgFonts)
-            // Перевернул карты
             setTimeout(() => {
-                // Перевернул карты
+                // Перевернул карты рубашкой вверх
                 console.log(imgFonts)
                 imgFonts.src = bacPackCards.img
-            }, 5000)
-            imgFonts.addEventListener('click', () => {
-                imgFonts.src = cardsCopy6InLvl1[i].img
-            })
+                imgFonts.cardPosition = false
+                // Клик по карте откроется через 5 секунд
+                imgFonts.addEventListener('click', () => {
+                    if (imgFonts.cardPosition === false) {
+                        imgFonts.src = cardsCopy6InLvl1[i].img
+                        imgFonts.cardPosition = true
+
+                        if (imgFonts.id) {
+                            alert('Вы победили')
+                        }
+                        setTimeout(() => {
+                            imgFonts.cardPosition = false
+                            imgFonts.src = bacPackCards.img
+                        }, 2500)
+                    } else if (imgFonts.cardPosition === true) {
+                        imgFonts.cardPosition = false
+                        imgFonts.src = bacPackCards.img
+                    }
+                })
+            }, 3000)
         }
     }
 }

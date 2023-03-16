@@ -99,42 +99,6 @@ btnStart.addEventListener('click', () => {
     }
 })
 
-// Функция переворота карточки
-function cardCheckedFunction() {
-    // если карточка уже не перевёрнута и мы не нажимаем на ту же самую карточку второй раз подряд
-    // // переворачиваем её
-    // // если мы перевернули первую карточку
-    // if (!_.guess) {
-    //   // то пока просто запоминаем её
-    //   _.guess = $(this).attr("data-id");
-    //   // если мы перевернули вторую и она совпадает с первой
-    // } else if (
-    //   _.guess == $(this).attr("data-id") &&
-    //   !$(this).hasClass("picked")
-    // ) {
-    //   // оставляем обе на поле перевёрнутыми и показываем анимацию совпадения
-    //   $(".picked").addClass("matched");
-    //   // обнуляем первую карточку
-    //   _.guess = null;
-    //   // если вторая не совпадает с первой
-    // } else {
-    //   // обнуляем первую карточку
-    //   _.guess = null;
-    //   // не ждём переворота второй карточки
-    //   _.paused = true;
-    //   // ждём полсекунды и переворачиваем всё обратно
-    //   setTimeout(function () {
-    //     $(".picked").removeClass("picked");
-    //     Memory.paused = false;
-    //   }, 600);
-    // }
-    // // если мы перевернули все карточки
-    // if ($(".matched").length == $(".card").length) {
-    //   // показываем победное сообщение
-    //   _.win();
-    // }
-}
-
 // Отрисовка первого уровня
 function containerLvl1() {
     divMobal.style.marginTop = '0px'
@@ -187,12 +151,17 @@ function containerLvl1() {
         let sorted = trhiCadsLvl1
         let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
         // Режу массив, копирую и отрисовывою
+        // Перемешать новый массив
+        cardsCopy6InLvl1.sort(() => Math.random() - 0.5)
+        let lastCilckKard = ''
 
+        console.log(lastCilckKard)
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
             const imgFonts = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
             imgFonts.id = cardsCopy6InLvl1[i].id
             imgFonts.cardPosition = true
+            imgFonts.className = 'stylesCards'
             console.log(imgFonts)
             divContentImajeLvl1.appendChild(imgFonts)
             setTimeout(() => {
@@ -200,19 +169,31 @@ function containerLvl1() {
                 console.log(imgFonts)
                 imgFonts.src = bacPackCards.img
                 imgFonts.cardPosition = false
+
                 // Клик по карте откроется через 5 секунд
                 imgFonts.addEventListener('click', () => {
                     if (imgFonts.cardPosition === false) {
                         imgFonts.src = cardsCopy6InLvl1[i].img
                         imgFonts.cardPosition = true
-
-                        if (imgFonts.id) {
+                        if (lastCilckKard === '') {
+                            lastCilckKard = imgFonts.id
+                            console.log(lastCilckKard)
+                        } else if (
+                            // если значение id новой карты больше или меньше
+                            lastCilckKard < imgFonts.id ||
+                            lastCilckKard > imgFonts.id
+                        ) {
+                            setTimeout(() => {
+                                imgFonts.cardPosition = false
+                                imgFonts.src = bacPackCards.img
+                            }, 1000)
+                        } else if (
+                            // если значение id новой карты больше или меньше
+                            lastCilckKard === imgFonts.id
+                        ) {
                             alert('Вы победили')
+                            lastCilckKard = ''
                         }
-                        setTimeout(() => {
-                            imgFonts.cardPosition = false
-                            imgFonts.src = bacPackCards.img
-                        }, 2500)
                     } else if (imgFonts.cardPosition === true) {
                         imgFonts.cardPosition = false
                         imgFonts.src = bacPackCards.img
@@ -275,14 +256,18 @@ function containerLvl2() {
         let trhiCadsLvl1 = allCardsFrontI1.slice(0, 6)
         let sorted = trhiCadsLvl1
         let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
-
         // Режу массив, копирую и отрисовывою
+        // Перемешать новый массив
+        cardsCopy6InLvl1.sort(() => Math.random() - 0.5)
+        let lastCilckKard = ''
 
+        console.log(lastCilckKard)
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
             const imgFonts = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
             imgFonts.id = cardsCopy6InLvl1[i].id
             imgFonts.cardPosition = true
+            imgFonts.className = 'stylesCards'
             console.log(imgFonts)
             divContentImajeLvl1.appendChild(imgFonts)
             setTimeout(() => {
@@ -290,19 +275,31 @@ function containerLvl2() {
                 console.log(imgFonts)
                 imgFonts.src = bacPackCards.img
                 imgFonts.cardPosition = false
+
                 // Клик по карте откроется через 5 секунд
                 imgFonts.addEventListener('click', () => {
                     if (imgFonts.cardPosition === false) {
                         imgFonts.src = cardsCopy6InLvl1[i].img
                         imgFonts.cardPosition = true
-
-                        if (imgFonts.id) {
+                        if (lastCilckKard === '') {
+                            lastCilckKard = imgFonts.id
+                            console.log(lastCilckKard)
+                        } else if (
+                            // если значение id новой карты больше или меньше
+                            lastCilckKard < imgFonts.id ||
+                            lastCilckKard > imgFonts.id
+                        ) {
+                            setTimeout(() => {
+                                imgFonts.cardPosition = false
+                                imgFonts.src = bacPackCards.img
+                            }, 1000)
+                        } else if (
+                            // если значение id новой карты больше или меньше
+                            lastCilckKard === imgFonts.id
+                        ) {
                             alert('Вы победили')
+                            lastCilckKard = ''
                         }
-                        setTimeout(() => {
-                            imgFonts.cardPosition = false
-                            imgFonts.src = bacPackCards.img
-                        }, 2500)
                     } else if (imgFonts.cardPosition === true) {
                         imgFonts.cardPosition = false
                         imgFonts.src = bacPackCards.img
@@ -366,12 +363,17 @@ function containerLvl3() {
         let sorted = trhiCadsLvl1
         let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
         // Режу массив, копирую и отрисовывою
+        // Перемешать новый массив
+        cardsCopy6InLvl1.sort(() => Math.random() - 0.5)
+        let lastCilckKard = ''
 
+        console.log(lastCilckKard)
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
             const imgFonts = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
             imgFonts.id = cardsCopy6InLvl1[i].id
             imgFonts.cardPosition = true
+            imgFonts.className = 'stylesCards'
             console.log(imgFonts)
             divContentImajeLvl1.appendChild(imgFonts)
             setTimeout(() => {
@@ -379,19 +381,31 @@ function containerLvl3() {
                 console.log(imgFonts)
                 imgFonts.src = bacPackCards.img
                 imgFonts.cardPosition = false
+
                 // Клик по карте откроется через 5 секунд
                 imgFonts.addEventListener('click', () => {
                     if (imgFonts.cardPosition === false) {
                         imgFonts.src = cardsCopy6InLvl1[i].img
                         imgFonts.cardPosition = true
-
-                        if (imgFonts.id) {
+                        if (lastCilckKard === '') {
+                            lastCilckKard = imgFonts.id
+                            console.log(lastCilckKard)
+                        } else if (
+                            // если значение id новой карты больше или меньше
+                            lastCilckKard < imgFonts.id ||
+                            lastCilckKard > imgFonts.id
+                        ) {
+                            setTimeout(() => {
+                                imgFonts.cardPosition = false
+                                imgFonts.src = bacPackCards.img
+                            }, 1000)
+                        } else if (
+                            // если значение id новой карты больше или меньше
+                            lastCilckKard === imgFonts.id
+                        ) {
                             alert('Вы победили')
+                            lastCilckKard = ''
                         }
-                        setTimeout(() => {
-                            imgFonts.cardPosition = false
-                            imgFonts.src = bacPackCards.img
-                        }, 2500)
                     } else if (imgFonts.cardPosition === true) {
                         imgFonts.cardPosition = false
                         imgFonts.src = bacPackCards.img

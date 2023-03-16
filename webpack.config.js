@@ -5,7 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: './src/index.ts',
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -14,6 +14,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
             {
                 test: /\.m?js$/,
                 exclude: /(node_modules)/,
@@ -41,6 +46,9 @@ module.exports = {
                 type: 'asset/resource',
             },
         ],
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
     },
     plugins: [
         new MiniCssExtractPlugin({

@@ -1,14 +1,18 @@
 import allCardsFrontI1 from './allCards.js'
 
-const app = {
-    lvl: null,
-    timer: null,
+type apps = { lvl: number; timer: number }
+
+const app: apps = {
+    lvl: 0,
+    timer: 0,
+}
+const divMobal = document.createElement('div')
+
+const body: HTMLElement | null = document.querySelector('body')
+if (body) {
+    body.appendChild(divMobal)
 }
 
-const body = document.querySelector('body')
-;('div')
-
-const divMobal = document.createElement('div')
 divMobal.id = 'selectLvlModal'
 divMobal.className = 'modal'
 
@@ -65,32 +69,31 @@ const butLvl3 = document.querySelector('.lvl-item-3')
 const btnStart = document.querySelector('.btn')
 
 butLvl1.addEventListener('click', () => {
-    app.lvl = '1'
-    console.log(app.lvl)
+    ;(app.lvl = 1), console.log(app.lvl)
 })
 
 butLvl2.addEventListener('click', () => {
-    app.lvl = '2'
+    app.lvl = 2
     console.log(app.lvl)
 })
 
 butLvl3.addEventListener('click', () => {
-    app.lvl = '3'
+    app.lvl = 3
     console.log(app.lvl)
 })
 
 // Логика при переходе
 btnStart.addEventListener('click', () => {
-    if (app.lvl === '1') {
+    if (app.lvl === 1) {
         alert('Переход на страницу Lvl 1')
         console.log(app.lvl)
         divMobal.removeChild(divMobalContainer)
         containerLvl1()
-    } else if (app.lvl === '2') {
+    } else if (app.lvl === 2) {
         alert('Переход на страницу Lvl 2')
         divMobal.removeChild(divMobalContainer)
         containerLvl2()
-    } else if (app.lvl === '3') {
+    } else if (app.lvl === 3) {
         alert('Переход на страницу Lvl 3')
         divMobal.removeChild(divMobalContainer)
         containerLvl3()
@@ -155,7 +158,6 @@ function containerLvl1() {
         cardsCopy6InLvl1.sort(() => Math.random() - 0.5)
         let lastCilckKard = ''
 
-        console.log(lastCilckKard)
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
             const imgFonts = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img

@@ -135,5 +135,12 @@ body {
   color: #ffffff;
   cursor: pointer; }
 
+.stylesCards {
+  padding: 5px;
+  margin: 5px; }
+
+.bacPackCards {
+  background-image: url(f6182d6403be8c841121.png); }
+
 
 /*# sourceMappingURL=styles.css.map*/

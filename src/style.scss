@@ -8,6 +8,31 @@ body {
     background-color: #004980;
 }
 
+.levels-list-Win {
+    padding-top: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+
+.text-content-black {
+    color: black;
+
+    padding-top: 22px;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+}
+
+.divFullwidchBlue {
+    background-color: #00498086;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+
 .hide {
     display: none;
 }
@@ -44,6 +69,7 @@ body {
     margin-top: 158px;
     &__container {
         padding: 52px 69px 48px 69px;
+        margin-bottom: 100px;
     }
     &__header {
         text-align: center;
@@ -60,6 +86,7 @@ body {
         padding-top: 48px;
         padding-bottom: 67px;
         display: flex;
+
         column-gap: 24px;
     }
 
@@ -109,7 +136,6 @@ body {
 
 .head {
     &__timer {
-        width: 155px;
         height: 91px;
         padding-top: 22px;
         padding-left: 22px;
@@ -136,12 +162,11 @@ body {
 .head {
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
 }
 
+.divHeadTimers {
+    display: flex;
+}
 .min-sec {
     display: flex;
     justify-content: space-evenly;
@@ -154,7 +179,7 @@ body {
 .btn {
     width: 246px;
     height: 50px;
-    margin-right: 23px;
+    
     border: none;
     background: #7ac100;
     border-radius: 12px;
@@ -166,6 +191,29 @@ body {
     color: #ffffff;
 
     cursor: pointer;
+}
+
+.btnWin {
+    width: 246px;
+    height: 50px;
+    
+    border: none;
+    background: #7ac100;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.text-Content-Class-Name-Win {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    padding-left: 65px;
 }
 
 .stylesCards {

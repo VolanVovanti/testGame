@@ -8,7 +8,7 @@ const app: apps = {
 }
 const divMobal = document.createElement('div')
 
-const body: HTMLElement | null = document.querySelector('body')
+const body: HTMLElement | any = document.querySelector('body')
 if (body) {
     body.appendChild(divMobal)
 }
@@ -62,11 +62,11 @@ divMobalFooter.appendChild(buttonBtnStart)
 
 // Логика после нажатия на старт
 
-const butLvl1 = document.querySelector('.lvl-item-1')
-const butLvl2 = document.querySelector('.lvl-item-2')
-const butLvl3 = document.querySelector('.lvl-item-3')
+const butLvl1: HTMLElement | any = document.querySelector('.lvl-item-1')
+const butLvl2: HTMLElement | any = document.querySelector('.lvl-item-2')
+const butLvl3: HTMLElement | any = document.querySelector('.lvl-item-3')
 
-const btnStart = document.querySelector('.btn')
+const btnStart: HTMLElement | any = document.querySelector('.btn')
 
 butLvl1.addEventListener('click', () => {
     ;(app.lvl = 1), console.log(app.lvl)
@@ -150,16 +150,19 @@ function containerLvl1() {
         delete allCardsFrontI1[0]
         // Удалил рубажку из массива и перемешал
         allCardsFrontI1.sort(() => Math.random() - 0.5)
-        let trhiCadsLvl1 = allCardsFrontI1.slice(0, 3)
+        let trhiCadsLvl1: HTMLElement | any = allCardsFrontI1.slice(0, 3)
         let sorted = trhiCadsLvl1
-        let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
+        let cardsCopy6InLvl1: HTMLElement | any = [].concat(
+            trhiCadsLvl1,
+            sorted
+        )
         // Режу массив, копирую и отрисовывою
         // Перемешать новый массив
         cardsCopy6InLvl1.sort(() => Math.random() - 0.5)
         let lastCilckKard = ''
 
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
-            const imgFonts = document.createElement('img')
+            const imgFonts: HTMLElement | any = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
             imgFonts.id = cardsCopy6InLvl1[i].id
             imgFonts.cardPosition = true
@@ -177,9 +180,9 @@ function containerLvl1() {
                     if (imgFonts.cardPosition === false) {
                         imgFonts.src = cardsCopy6InLvl1[i].img
                         imgFonts.cardPosition = true
+
                         if (lastCilckKard === '') {
                             lastCilckKard = imgFonts.id
-                            console.log(lastCilckKard)
                         } else if (
                             // если значение id новой карты больше или меньше
                             lastCilckKard < imgFonts.id ||
@@ -196,12 +199,9 @@ function containerLvl1() {
                             alert('Вы победили')
                             lastCilckKard = ''
                         }
-                    } else if (imgFonts.cardPosition === true) {
-                        imgFonts.cardPosition = false
-                        imgFonts.src = bacPackCards.img
                     }
                 })
-            }, 3000)
+            }, 5000)
         }
     }
 }
@@ -255,9 +255,12 @@ function containerLvl2() {
         delete allCardsFrontI1[0]
         // Удалил рубажку из массива и перемешал
         allCardsFrontI1.sort(() => Math.random() - 0.5)
-        let trhiCadsLvl1 = allCardsFrontI1.slice(0, 6)
+        let trhiCadsLvl1: HTMLElement | any = allCardsFrontI1.slice(0, 6)
         let sorted = trhiCadsLvl1
-        let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
+        let cardsCopy6InLvl1: HTMLElement | any = [].concat(
+            trhiCadsLvl1,
+            sorted
+        )
         // Режу массив, копирую и отрисовывою
         // Перемешать новый массив
         cardsCopy6InLvl1.sort(() => Math.random() - 0.5)
@@ -265,7 +268,7 @@ function containerLvl2() {
 
         console.log(lastCilckKard)
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
-            const imgFonts = document.createElement('img')
+            const imgFonts: HTMLElement | any = document.createElement('img')
             imgFonts.src = cardsCopy6InLvl1[i].img
             imgFonts.id = cardsCopy6InLvl1[i].id
             imgFonts.cardPosition = true
@@ -278,14 +281,13 @@ function containerLvl2() {
                 imgFonts.src = bacPackCards.img
                 imgFonts.cardPosition = false
 
-                // Клик по карте откроется через 5 секунд
                 imgFonts.addEventListener('click', () => {
                     if (imgFonts.cardPosition === false) {
                         imgFonts.src = cardsCopy6InLvl1[i].img
                         imgFonts.cardPosition = true
+
                         if (lastCilckKard === '') {
                             lastCilckKard = imgFonts.id
-                            console.log(lastCilckKard)
                         } else if (
                             // если значение id новой карты больше или меньше
                             lastCilckKard < imgFonts.id ||
@@ -302,12 +304,9 @@ function containerLvl2() {
                             alert('Вы победили')
                             lastCilckKard = ''
                         }
-                    } else if (imgFonts.cardPosition === true) {
-                        imgFonts.cardPosition = false
-                        imgFonts.src = bacPackCards.img
                     }
                 })
-            }, 3000)
+            }, 5000)
         }
     }
 }
@@ -357,13 +356,16 @@ function containerLvl3() {
     function allCardsUseForLvl1() {
         //Достал рубашку
         const bacPackCards = allCardsFrontI1[0]
-        console.log(bacPackCards)
+
         delete allCardsFrontI1[0]
         // Удалил рубажку из массива и перемешал
         allCardsFrontI1.sort(() => Math.random() - 0.5)
-        let trhiCadsLvl1 = allCardsFrontI1.slice(0, 9)
+        let trhiCadsLvl1: HTMLElement | any = allCardsFrontI1.slice(0, 9)
         let sorted = trhiCadsLvl1
-        let cardsCopy6InLvl1 = [].concat(trhiCadsLvl1, sorted)
+        let cardsCopy6InLvl1: HTMLElement | any = [].concat(
+            trhiCadsLvl1,
+            sorted
+        )
         // Режу массив, копирую и отрисовывою
         // Перемешать новый массив
         cardsCopy6InLvl1.sort(() => Math.random() - 0.5)
@@ -371,7 +373,12 @@ function containerLvl3() {
 
         console.log(lastCilckKard)
         for (let i = 0; i < cardsCopy6InLvl1.length; i++) {
-            const imgFonts = document.createElement('img')
+            const imgFonts: HTMLElement | any = document.createElement('img')
+            interface imgFonts {
+                img: string
+                id: string
+                [key: string]: string
+            }
             imgFonts.src = cardsCopy6InLvl1[i].img
             imgFonts.id = cardsCopy6InLvl1[i].id
             imgFonts.cardPosition = true
@@ -384,14 +391,14 @@ function containerLvl3() {
                 imgFonts.src = bacPackCards.img
                 imgFonts.cardPosition = false
 
-                // Клик по карте откроется через 5 секунд
                 imgFonts.addEventListener('click', () => {
                     if (imgFonts.cardPosition === false) {
                         imgFonts.src = cardsCopy6InLvl1[i].img
                         imgFonts.cardPosition = true
+                        
                         if (lastCilckKard === '') {
                             lastCilckKard = imgFonts.id
-                            console.log(lastCilckKard)
+                           
                         } else if (
                             // если значение id новой карты больше или меньше
                             lastCilckKard < imgFonts.id ||
@@ -408,12 +415,9 @@ function containerLvl3() {
                             alert('Вы победили')
                             lastCilckKard = ''
                         }
-                    } else if (imgFonts.cardPosition === true) {
-                        imgFonts.cardPosition = false
-                        imgFonts.src = bacPackCards.img
-                    }
+                    } 
                 })
-            }, 3000)
+            }, 5000)
         }
     }
 }

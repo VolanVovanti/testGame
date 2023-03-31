@@ -187,7 +187,7 @@ function startGame() {
     divMobal.id = 'selectLvlModal'
     divMobal.className = 'modal'
 
-    body.appendChild(divMobal)
+    
 
     const divMobalContainer = document.createElement('div')
     divMobalContainer.className = 'modal__container'
@@ -272,6 +272,7 @@ function startGame() {
 // Отрисовка первого уровня
 
 function containerLvl1() {
+    divMobal.className = ''
     startGameFrontEcran() // Отрисовка экрана до раскладки карт
     //Достал рубашку
     const bacPackCards = allCardsFrontI1[0]

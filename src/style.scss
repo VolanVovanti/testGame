@@ -1,3 +1,23 @@
+@font-face {
+    font-family: Mewium;
+    src: url(/src/fonts/stratosskyengweb-medium.woff);
+}
+
+@font-face {
+    font-family: Medium2;
+    src: url(/src/fonts/stratosskyengweb-medium.woff2);
+}
+
+@font-face {
+    font-family: Regular;
+    src: url(/src/fonts/stratosskyengweb-regular.woff);
+}
+
+@font-face {
+    font-family: Regular2;
+    src: url(/src/fonts/stratosskyengweb-regular.woff2);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -19,7 +39,7 @@ body {
 
 .text-content-black {
     color: black;
-
+    font-family: Regular;
     padding-top: 22px;
     font-weight: 400;
     font-size: 64px;
@@ -63,12 +83,13 @@ body {
 
 .modal {
     width: 480px;
+    height: 459px;
     background: #c2f5ff;
     border-radius: 12px;
     margin: 0 auto;
     margin-top: 158px;
     &__container {
-        padding: 52px 69px 48px 69px;
+        padding: 52px 69px 0px 69px;
         margin-bottom: 100px;
     }
     &__header {
@@ -80,11 +101,12 @@ body {
         font-size: 40px;
         line-height: 48px;
         color: #004980;
+        font-family: Regular;
     }
 
     &__content .levels-list {
         padding-top: 48px;
-        padding-bottom: 67px;
+        padding-bottom: 0px;
         display: flex;
 
         column-gap: 24px;
@@ -103,7 +125,7 @@ body {
         text-align: center;
         color: #0080c1;
         justify-content: space-evenly;
-
+        font-family: Regular;
         cursor: pointer;
     }
 
@@ -139,7 +161,7 @@ body {
         height: 91px;
         padding-top: 22px;
         padding-left: 22px;
-
+        font-family: Regular;
         font-weight: 400;
         font-size: 64px;
         line-height: 72px;
@@ -154,7 +176,7 @@ body {
         /* identical to box height, or 200% */
 
         font-feature-settings: 'pnum' on, 'lnum' on;
-
+        font-family: Regular;
         color: #ffffff;
     }
 }
@@ -179,7 +201,7 @@ body {
 .btn {
     width: 246px;
     height: 50px;
-    
+
     border: none;
     background: #7ac100;
     border-radius: 12px;
@@ -189,14 +211,14 @@ body {
     line-height: 32px;
 
     color: #ffffff;
-
+    font-family: Regular;
     cursor: pointer;
 }
 
 .btnWin {
     width: 246px;
     height: 50px;
-    
+
     border: none;
     background: #7ac100;
     border-radius: 12px;
@@ -205,7 +227,7 @@ body {
     line-height: 32px;
 
     color: #ffffff;
-
+    font-family: Regular;
     cursor: pointer;
 }
 
@@ -214,6 +236,7 @@ body {
     font-size: 24px;
     line-height: 32px;
     padding-left: 65px;
+    font-family: Regular;
 }
 
 .stylesCards {
